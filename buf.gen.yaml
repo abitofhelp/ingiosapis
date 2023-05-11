@@ -6,6 +6,7 @@ managed:
     # Remove `except` field if googleapis is not used
     except:
       - buf.build/googleapis/googleapis
+#  The plug-ins field contains the list of executables that participate in a local generation and build.
 plugins:
 
   # Go language implementation of gRPC. HTTP/2 based RPC.
