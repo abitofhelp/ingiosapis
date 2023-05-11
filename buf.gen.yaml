@@ -1,0 +1,39 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/abitofhelp/ingiosapis/gen
+    # Remove `except` field if googleapis is not used
+    except:
+      - buf.build/googleapis/googleapis
+plugins:
+
+  # Go language implementation of gRPC. HTTP/2 based RPC.
+  # go get -u google.golang.org/grpc@latest
+  - plugin: buf.build/grpc/go
+    out: gen
+    opt: paths=source_relative
+
+  # Generate Go JSON Marshal/Unmarshal implementations for messages using jsonpb.
+  # go get github.com/mitchellh/protoc-gen-go-json@latest
+  - plugin: buf.build/community/mitchellh-go-json
+    out: gen
+    opt: paths=source_relative
+
+  # Generate optimized marshaling & unmarshaling Go code for ProtoBuf APIv2.
+  # go install github.com/planetscale/vtprotobuf/cmd/protoc-gen-go-vtproto@latest
+  - plugin: buf.build/community/planetscale-vtprotobuf
+    out: gen
+    opt: paths=source_relative
+
+  # Go support for Google's protocol buffers.
+  # go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+  - plugin: buf.build/protocolbuffers/go
+    out: gen
+    opt: paths=source_relative
+
+  # Protobuf validation
+  # go get -d github.com/envoyproxy/protoc-gen-validate@latest
+  - plugin: buf.build/bufbuild/validate-go
+    out: gen
+    opt: paths=source_relative

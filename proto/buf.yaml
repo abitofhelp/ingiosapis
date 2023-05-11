@@ -1,0 +1,12 @@
+version: v1
+name: buf.build/abitofhelp/ingiosapis
+breaking:
+  use:
+    - FILE
+lint:
+  use:
+    - DEFAULT
+  ignore:
+    - google/type/datetime.proto
+deps:
+  - buf.build/envoyproxy/protoc-gen-validate

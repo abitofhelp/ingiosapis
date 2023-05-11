@@ -1,0 +1,16 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 2017-2022 - Ingios Geotechnics, Inc.  All Rights Reserved.
+// Use of this source code is governed by the content in the LICENSE file in
+// the root of this repository.
+////////////////////////////////////////////////////////////////////////////////
+
+syntax = "proto3";
+
+package api.project.v5;
+
+enum AccessTier {
+  ACCESS_TIER_UNSPECIFIED = 0;
+  ACCESS_TIER_ARCHIVE = 1;
+  ACCESS_TIER_COOL = 2;
+  ACCESS_TIER_HOT = 3;
+}
