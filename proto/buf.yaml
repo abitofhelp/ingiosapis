@@ -8,5 +8,5 @@ lint:
     - DEFAULT
   ignore:
     - google/type/datetime.proto
-deps:
-  - buf.build/envoyproxy/protoc-gen-validate
+# The deps field is the way to express dependencies between BSR modules.
+deps: [ ]
