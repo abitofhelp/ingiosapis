@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-// Copyright (c) 2017-2022 - Ingios Geotechnics, Inc.  All Rights Reserved.
+// Copyright (c) 1999-2023 - A Bit of Help, Inc.  All Rights Reserved.
 // Use of this source code is governed by the content in the LICENSE file in
 // the root of this repository.
 ////////////////////////////////////////////////////////////////////////////////
