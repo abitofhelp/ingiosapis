@@ -1,0 +1,22 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 2017-2022 - Ingios Geotechnics, Inc.  All Rights Reserved.
+// Use of this source code is governed by the content in the LICENSE file in
+// the root of this repository.
+////////////////////////////////////////////////////////////////////////////////
+
+syntax = "proto3";
+
+package api.project.v5;
+
+import "api/project/v5/access_tier.proto";
+import "validate/validate.proto";
+
+message Project {
+  string name = 1 [
+    (validate.rules).string = {
+      pattern:   "^[^[0-9]A-Za-z]+( [^[0-9]A-Za-z]+)*$",
+      max_bytes: 80,
+    }];
+
+  AccessTier access_tier = 2 [(validate.rules).enum.defined_only = true];
+}
